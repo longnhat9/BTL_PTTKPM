@@ -543,6 +543,42 @@
                             </div>
                         </div>
                         <div class="form-login">
+                            <?php
+                            ob_start();
+                            $userLogin = $passLogin = "";
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                if (isset($_POST['user_login']) || isset($_POST['pass_login'])) {
+                                    $userLogin = $_POST['user_login'];
+                                    $passLogin = $_POST['pass_login'];
+                                }
+                                if (empty($userLogin) == 1 || empty($passLogin) == 1) {
+                                    echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không được để trống!');</script>";
+                                } else {
+                                    $servername = "localhost";
+                                    $username = "root";
+                                    $password = "admin";
+                                    $dbName = "btl";
+                                    $conn = mysqli_connect($servername, $username, $password, $dbName);
+                                    if (!$conn) {
+                                        die("Connection failed: " . mysqli_connect_error());
+                                    }
+                                    $sqlSelect = "SELECT username, password FROM account WHERE username = '".$userLogin."' AND password = '".$passLogin."'";
+                                    $resultSelect = $conn->query($sqlSelect);
+                                    if ($resultSelect->num_rows > 0) {
+                                        if (strcmp($userLogin, "admin") == 0 && strcmp($passLogin, "admin") == 0) {
+                                            echo "<script type='text/javascript'>alert('Đăng nhập thành công với vai trò quản trị viên!');</script>";
+                                            echo "<script>window.location.href='./admin/category.html';</script>";
+                                        } else {
+                                            echo "<script type='text/javascript'>alert('Đăng nhập thành công!');</script>";
+                                            echo "<script>window.location.href='./index.html';</script>";
+                                        }
+                                    } else {
+                                        echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không đúng!');</script>";
+                                    }
+                                }
+                            }
+                            ob_flush();
+                            ?>
                             <form method="post" action="">
                                 <div class="form-login__login-form">
                                     <div class="form-login__username">
@@ -567,36 +603,6 @@
                                     </div>
                                 </div>
                             </form>
-                            <?php
-                            $userLogin = $passLogin = "";
-                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                if (isset($_POST['user_login']) || isset($_POST['pass_login'])) {
-                                    $userLogin = $_POST['user_login'];
-                                    $passLogin = $_POST['pass_login'];
-                                }
-                                if (empty($userLogin) == 1 || empty($passLogin) == 1) {
-                                    echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không được để trống!');</script>";
-                                } else {
-                                    $servername = "localhost";
-                                    $username = "root";
-                                    $password = "admin";
-                                    $dbName = "btl";
-                                    $conn = mysqli_connect($servername, $username, $password, $dbName);
-                                    if (!$conn) {
-                                        die("Connection failed: " . mysqli_connect_error());
-                                    }
-
-                                    $sqlSelect = "SELECT username, password FROM account WHERE username = '".$userLogin."' AND password = '".$passLogin."'";
-                                    $resultSelect = $conn->query($sqlSelect);
-
-                                    if ($resultSelect->num_rows > 0) {
-                                        echo "<script type='text/javascript'>alert('Đăng nhập thành công!');</script>";
-                                    } else {
-                                        echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không đúng!');</script>";
-                                    }
-                                }
-                            }
-                            ?>
                         </div>
                     </div>
 
@@ -795,7 +801,7 @@
             </div>
             <!-- end body -->
         </div>
-        <!-- <script src="./javascript/account.js"></script> -->
+        <script src="./javascript/account.js"></script>
         <script src="./javascript/main.js"></script>
     </body>
 </html>

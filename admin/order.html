@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quản lý đơn hàng</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="js/lumino.glyphs.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#sidebar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html"><span>Nhóm 9</span></a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user">
+								<use xlink:href="#stroked-male-user"></use>
+							</svg> Admin <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user">
+										<use xlink:href="#stroked-male-user"></use>
+									</svg> Hồ sơ</a></li>
+							<li><a href="../login.php"><svg class="glyph stroked cancel">
+										<use xlink:href="#stroked-cancel"></use>
+									</svg> Đăng xuất</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<ul class="nav menu">
+			<li><a href="category.html"><svg class="glyph stroked open folder">
+						<use xlink:href="#stroked-open-folder" />
+					</svg>Quản lý danh mục</a></li>
+			<li><a href="product.html"><svg class="glyph stroked bag">
+						<use xlink:href="#stroked-bag"></use>
+					</svg>Quản lý sản phẩm</a></li>
+			<li><a href="employee.html"><svg class="glyph stroked open folder">
+						<use xlink:href="#stroked-open-folder" />
+					</svg>Quản lý nhân viên</a></li>
+			<li><a href="customer.html"><svg class="glyph stroked open folder">
+						<use xlink:href="#stroked-open-folder" />
+					</svg>Quản lý khách hàng</a></li>
+			<li><a href="revenue.html"><svg class="glyph stroked open folder">
+						<use xlink:href="#stroked-open-folder" />
+					</svg>Quản lý doanh thu</a></li>
+			<li class="active"><a href="order.html"><svg class="glyph stroked open folder">
+						<use xlink:href="#stroked-open-folder" />
+					</svg>Quản lý đơn hàng</a></li>
+		</ul>
+	</div>
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div>
+			<div class="row">
+				<ol class="breadcrumb">
+					<li><a href="#"><svg class="glyph stroked home">
+								<use xlink:href="#stroked-home"></use>
+							</svg></a></li>
+					<li class="active">Quản lý đơn hàng</li>
+				</ol>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Danh sách trạng thái của những đơn đặt hàng</h1>
+				</div>
+			</div>
+		</div>
+		<div>
+			<table class="table table-bordered">
+				<thead>
+					<tr class="ex">
+						<th>Số thứ tự</th>
+						<th>Mã đơn hàng</th>
+						<th width="auto">Tên khách hàng</th>
+						<th width="auto">Số điện thoại</th>
+						<th>Số lượng sản phẩm</th>
+						<th>Tổng số tiền</th>
+						<th>Trạng thái</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>A01</td>
+						<td>Nguyễn Tấn Trung</td>
+						<td>099999999</td>
+						<td>12</td>
+						<td>480,000</td>
+						<td>Đã xử lý</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>A02</td>
+						<td>Trần Trúc An</td>
+						<td>099999999</td>
+						<td>05</td>
+						<td>100,000</td>
+						<td>Đã xử lý</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>A03</td>
+						<td>Phạm Thu Cúc</td>
+						<td>099999999</td>
+						<td>08</td>
+						<td>250,000</td>
+						<td>Chưa xử lý</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>A04</td>
+						<td>Nguyễn Thị Kim Ngân</td>
+						<td>099999999</td>
+						<td>23</td>
+						<td>800,000</td>
+						<td>Đã xử lý</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>A04</td>
+						<td>Nguyễn Anh Tuấn</td>
+						<td>099999999</td>
+						<td>14</td>
+						<td>460,000</td>
+						<td>Chưa xử lý</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>A05</td>
+						<td>Huỳnh Cẩm Thu</td>
+						<td>099999999</td>
+						<td>18</td>
+						<td>560,000</td>
+						<td>Đã xử lý</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Bình quân số lượng đơn hàng được giao thành công / bị hủy trong ngày / tháng /
+					quý / năm</h1>
+			</div>
+		</div>
+
+		<div>
+			<table class="table table-bordered">
+				<thead>
+					<tr class="ex">
+						<th>Chu kỳ</th>
+						<th width="auto">Số lượng đơn hàng giao thành công</th>
+						<th width="auto">Số lượng đơn hàng giao bị hủy</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Ngày</td>
+						<td>40</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Tháng</td>
+						<td>2125</td>
+						<td>600</td>
+					</tr>
+					<tr>
+						<td>Quý</td>
+						<td>5628</td>
+						<td>885</td>
+					</tr>
+					<tr>
+						<td>Năm</td>
+						<td>10058</td>
+						<td>1021</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+</body>
+
+</html>

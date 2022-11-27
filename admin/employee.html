@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Quản lý nhân viên</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/datepicker3.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+
+	<script src="js/lumino.glyphs.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#sidebar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html"><span>Nhóm </span>9</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user">
+								<use xlink:href="#stroked-male-user"></use>
+							</svg> Admin <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user">
+										<use xlink:href="#stroked-male-user"></use>
+									</svg> Hồ sơ</a></li>
+							<li><a href="../login.php"><svg class="glyph stroked cancel">
+										<use xlink:href="#stroked-cancel"></use>
+									</svg> Đăng xuất</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	<div>
+		<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+			<ul class="nav menu">
+				<li><a href="category.html"><svg class="glyph stroked open folder">
+							<use xlink:href="#stroked-open-folder" />
+						</svg>Quản lý danh mục</a></li>
+				<li><a href="product.html"><svg class="glyph stroked bag">
+							<use xlink:href="#stroked-bag"></use>
+						</svg>Quản lý sản phẩm</a></li>
+				<li class="active"><a href=""><svg class="glyph stroked open folder">
+							<use xlink:href="#stroked-open-folder" />
+						</svg>Quản lý nhân viên</a></li>
+				<li><a href="customer.html"><svg class="glyph stroked open folder">
+							<use xlink:href="#stroked-open-folder" />
+						</svg>Quản lý khách hàng</a></li>
+				<li><a href="revenue.html"><svg class="glyph stroked open folder">
+							<use xlink:href="#stroked-open-folder" />
+						</svg>Quản lý doanh thu</a></li>
+				<li><a href="order.html"><svg class="glyph stroked open folder">
+							<use xlink:href="#stroked-open-folder" />
+						</svg>Quản lý đơn hàng</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+			<div>
+				<div class="row">
+					<ol class="breadcrumb">
+						<li><a href="#"><svg class="glyph stroked home">
+									<use xlink:href="#stroked-home"></use>
+								</svg></a></li>
+						<li class="active">Quản lý nhân viên</li>
+					</ol>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">Danh sách nhân viên</h1>
+					</div>
+				</div>
+				<div id="toolbar" class="btn-group">
+					<a href="add_employee.html" class="btn btn-success">
+						<i class="glyphicon glyphicon-plus"></i> Thêm nhân viên
+					</a>
+				</div>
+			</div>
+			<div>
+				<table class="table table-bordered" id="myTable">
+					<thead>
+						<tr class="ex">
+							<th>Tài khoản</th>
+							<th width="auto">Tên Nhân Viên</th>
+							<th width="auto">Giới Tính</th>
+							<th>Ngày Sinh</th>
+							<th>Địa Chỉ</th>
+							<th>Chức Vụ</th>
+							<th>Tính Năng</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>trung@gmail.com</td>
+							<td>Nguyễn Tấn Trung</td>
+							<td>Nam</td>
+							<td>07/10/1997</td>
+							<td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
+
+							<td>Dịch Vụ</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>an@gmail.com</td>
+							<td>Trần Trúc An</td>
+							<td>Nữ</td>
+							<td>22/12/1999</td>
+							<td>Số 3 Hòa Bình, Phường 3, Quận 11, Hồ Chí Minh</td>
+
+							<td>Phục Vụ</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>cuc@gmail.com</td>
+							<td>Phạm Thu Cúc</td>
+							<td>Nữ</td>
+							<td>02/06/1998</td>
+							<td>19 Đường Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh</td>
+
+							<td>Thu Ngân</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>ngan@gmail.com</td>
+							<td>Nguyễn Thị Kim Ngân</td>
+							<td>Nữ</td>
+							<td>06/04/1998</td>
+							<td>Số 13, Tân Thuận Đông, Quận 7, Hồ Chí Minh</td>
+							<td>Phục Vụ</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>tuan@gmail.com</td>
+							<td>Nguyễn Anh Tuấn</td>
+							<td>Nam</td>
+							<td>23/07/1996</td>
+							<td>59C Nguyễn Đình Chiểu, Quận 3, Hồ Chí Minh</td>
+							<td>Dịch Vụ</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>thu@gmail.com</td>
+							<td>Huỳnh Cẩm Thu</td>
+							<td>Nữ</td>
+							<td>19/01/1997</td>
+							<td>764 Võ Văn Kiệt, Phường 1, Quận 5, Hồ Chí Minh</td>
+							<td>Tư Vấn</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>ly@gmail.com</td>
+							<td>Nguyễn Xuân Ly</td>
+							<td>Nữ</td>
+							<td>30/10/1999</td>
+							<td>Đường Kênh T2 Ấp 6 Xã Hưng Long Huyện Bình Chánh, Hưng Long, Bình Chánh, Hồ Chí Minh
+							</td>
+							<td>Tư Vấn</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td>nam@gmail.com</td>
+							<td>Hoàng Xuân Nam</td>
+							<td>Nữ</td>
+							<td>20/7/1989</td>
+							<td>37 Vạn Tượng, Phường 13, Quận 5, Hồ Chí Minh</td>
+							<td>QL Kho</td>
+							<td class="form-group">
+								<a href="edit_employee.html" class="btn btn-primary"><i
+										class="glyphicon glyphicon-pencil"></i></a>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Đơn hàng được nhân viên xử lý</h1>
+				</div>
+			</div>
+			<div>
+				<table class="table table-bordered" id="myTable">
+					<thead>
+						<tr class="ex">
+							<th>Mã Đơn hàng</th>
+							<th>Tên</th>
+							<th>Địa chỉ</th>
+							<th>Số điện thoại liên hệ</th>
+							<th>Số lượng sản phẩm</th>
+							<th>Tổng tiền</th>
+							<th>Trạng thái</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>A01</td>
+							<td>Nguyễn Tấn Trung</td>
+							<td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
+							<td>0999999999</td>
+							<td>10</td>
+							<td>140,000</td>
+							<td>Thành công</td>
+						</tr>
+						<tr>
+							<td>A02</td>
+							<td>Trần Trúc An</td>
+							<td>Số 3 Hòa Bình, Phường 3, Quận 11, Hồ Chí Minh</td>
+							<td>0999999999</td>
+							<td>10</td>
+							<td>500,000</td>
+							<td>Chưa xử lý</td>
+						</tr>
+						<tr>
+							<td>A03</td>
+							<td>Phạm Thu Cúc</td>
+							<td>19 Đường Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh</td>
+							<td>0999999999</td>
+							<td>10</td>
+							<td>250,000</td>
+							<td>Thành công</td>
+						</tr>
+						<tr>
+							<td>A04</td>
+							<td>Nguyễn Thị Kim Ngân</td>
+							<td>Số 13, Tân Thuận Đông, Quận 7, Hồ Chí Minh</td>
+							<td>0999999999</td>
+							<td>10</td>
+							<td>160,000</td>
+							<td>Chưa xử lý</td>
+						</tr>
+						<tr>
+							<td>A05</td>
+							<td>Nguyễn Anh Tuấn</td>
+							<td>59C Nguyễn Đình Chiểu, Quận 3, Hồ Chí Minh</td>
+							<td>0999999999</td>
+							<td>10</td>
+							<td>900,000</td>
+							<td>Thành công</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">Tổng doanh thu các đơn hàng mà nhân viên đã xử lý : 1,290,000</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+</body>
+
+</html>

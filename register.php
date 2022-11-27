@@ -610,6 +610,7 @@
                                     } else {
                                         if ($conn->query($sqlInsert) === TRUE) {
                                             echo "<script type='text/javascript'>alert('Đăng ký tài khoản thành công!');</script>";
+                                            echo "<script>window.location.href='./login.php';</script>";
                                         } else {
                                             echo "Error: " . $sqlInsert . "<br>" . $conn->error;
                                         }

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản lý doanh thu</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/datepicker3.css" rel="stylesheet">
+  <link href="css/bootstrap-table.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/lumino.glyphs.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span>Nhóm 9</span></a>
+        <ul class="user-menu">
+          <li class="dropdown pull-right">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user">
+                <use xlink:href="#stroked-male-user"></use>
+              </svg> Admin <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#"><svg class="glyph stroked male-user">
+                    <use xlink:href="#stroked-male-user"></use>
+                  </svg> Hồ sơ</a></li>
+              <li><a href="../login.php"><svg class="glyph stroked cancel">
+                    <use xlink:href="#stroked-cancel"></use>
+                  </svg> Đăng xuất</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <ul class="nav menu">
+      <li><a href="category.html"><svg class="glyph stroked open folder">
+            <use xlink:href="#stroked-open-folder" />
+          </svg>Quản lý danh mục</a></li>
+      <li><a href="product.html"><svg class="glyph stroked bag">
+            <use xlink:href="#stroked-bag"></use>
+          </svg>Quản lý sản phẩm</a></li>
+      <li><a href="employee.html"><svg class="glyph stroked open folder">
+            <use xlink:href="#stroked-open-folder" />
+          </svg>Quản lý nhân viên</a></li>
+      <li><a href="customer.html"><svg class="glyph stroked open folder">
+            <use xlink:href="#stroked-open-folder" />
+          </svg>Quản lý khách hàng</a></li>
+      <li class="active"><a href="revenue.html"><svg class="glyph stroked open folder">
+            <use xlink:href="#stroked-open-folder" />
+          </svg>Quản lý doanh thu</a></li>
+      <li><a href="order.html"><svg class="glyph stroked open folder">
+            <use xlink:href="#stroked-open-folder" />
+          </svg>Quản lý đơn hàng</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div>
+      <div class="row">
+        <ol class="breadcrumb">
+          <li><a href="#"><svg class="glyph stroked home">
+                <use xlink:href="#stroked-home"></use>
+              </svg></a></li>
+          <li class="active">Quản lý doanh thu</li>
+        </ol>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">Doanh thu ba tháng gần nhất</h1>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <html>
+
+        <head>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['Week', 'March', 'April'],
+                ['1', 10000, 4000],
+                ['2', 11700, 4600],
+                ['3', 6600, 11200],
+                ['4', 10300, 5400]
+              ]);
+
+              var options = {
+                title: 'Doanh thu ba tháng gần nhất (triệu đồng)',
+                hAxis: { title: 'Week', titleTextStyle: { color: '#333' } },
+                vAxis: { minValue: 0 }
+              };
+
+              var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+            }
+          </script>
+        </head>
+
+        <body>
+          <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        </body>
+
+        </html>
+
+      </div>
+    </div>
+
+
+
+
+    <div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">Doanh thu 30 ngày gần nhất</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load("current", { packages: ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ["Element", "Số tiền", { role: "style" }],
+              ["9/5", 8.94, "#b87333"],
+              ["10/5", 10.49, "silver"],
+              ["11/5", 19.30, "gold"],
+              ["12/5", 21.45, "color: #e5e4e2"]
+
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+              {
+                calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation"
+              },
+              2]);
+
+            var options = {
+              title: "Doanh thu 4 ngày cuối cùng (triệu đồng)",
+              width: 600,
+              height: 400,
+              bar: { groupWidth: "95%" },
+              legend: { position: "none" },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+            chart.draw(view, options);
+          }
+        </script>
+        <div id="columnchart_values" style="width: 1200px; height: 400px;"></div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header"> Top 5 sản phầm bán chạy nhất </h1>
+          </div>
+        </div>
+
+        <head>
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['bar'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['Tên sản phẩm', 'Số lượng sản phẩm', { role: 'style' }],
+                ['Bút chì Thiên Long', 280, 'color: #76A7FA'],
+                ['Vở ô ly Hồng Hà ', 220, 'color: #76A7FA'],
+                ['Ngòi chì 0.5', 160, 'opacity: 0.2'],
+                ['Bút chì kim', 140, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+                ['Dao dọc giấy', 100, 'stroke-color: #871B47; stroke-opacity: 0.6; stroke-width: 8; fill-color: #BC5679; fill-opacity: 0.2']
+              ]);
+
+              var options = {
+                chart: {
+                  title: 'Danh sách 5 sản phẩm bán chạy trong tháng theo doanh số sản phẩm (xếp từ trên xuống dưới)'
+                },
+                bars: 'horizontal' // Required for Material Bar Charts.
+              };
+
+              var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+              chart.draw(data, google.charts.Bar.convertOptions(options));
+            }
+          </script>
+        </head>
+
+        <body>
+          <div id="barchart_material" style="width: 800px; height: 500px;"></div>
+        </body>
+
+</html>
+
+</div>
+</div>
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+</body>
+
+</html>
